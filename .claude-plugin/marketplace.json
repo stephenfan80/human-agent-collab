@@ -1,0 +1,14 @@
+{
+  "name": "human-agent-collab",
+  "description": "Human-Agent collaboration skill marketplace · 人和 Agent 协作 skill",
+  "owner": {
+    "name": "stephenfan80"
+  },
+  "plugins": [
+    {
+      "name": "zoon",
+      "source": ".",
+      "description": "Agent-native collaborative editing for shared markdown documents."
+    }
+  ]
+}

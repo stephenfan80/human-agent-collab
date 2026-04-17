@@ -1,0 +1,9 @@
+{
+  "name": "zoon",
+  "version": "0.1.0",
+  "description": "Agent-native collaborative editing skill. Any HTTP-capable agent can read, comment on, and — after a human thumbs-up — edit a shared markdown document.",
+  "author": "stephenfan80",
+  "license": "MIT",
+  "repository": "https://github.com/stephenfan80/human-agent-collab",
+  "skills": ["skills/zoon/SKILL.md"]
+}

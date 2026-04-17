@@ -1,0 +1,25 @@
+name: validate
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check SKILL.md frontmatter
+        run: |
+          head -1 SKILL.md | grep -q "^---$" || { echo "SKILL.md missing frontmatter"; exit 1; }
+          grep -q "^name:" SKILL.md || { echo "SKILL.md missing name:"; exit 1; }
+          grep -q "^description:" SKILL.md || { echo "SKILL.md missing description:"; exit 1; }
+      - name: Check SKILL.md matches skills/zoon/SKILL.md
+        run: |
+          diff SKILL.md skills/zoon/SKILL.md
+      - name: Validate plugin.json
+        run: |
+          python3 -c "import json; json.load(open('.claude-plugin/plugin.json'))"
+      - name: Validate marketplace.json
+        run: |
+          python3 -c "import json; json.load(open('.claude-plugin/marketplace.json'))"
