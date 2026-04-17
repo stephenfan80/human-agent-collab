@@ -8,7 +8,7 @@
     {
       "name": "zoon",
       "source": ".",
-      "description": "Agent-native collaborative editing for shared markdown documents."
+      "description": "Agent-native collaborative editing for shared markdown documents, gated by the 「拍板」 (Ack) protocol."
     }
   ]
 }
